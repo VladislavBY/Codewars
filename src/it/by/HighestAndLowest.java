@@ -17,7 +17,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 public class HighestAndLowest {
-
     public static String highAndLow(String numbers) {
         String re = "";
         numbers += " "; //fix ArrayIndexOutOfBoundsException

@@ -12,7 +12,7 @@ public class DeodorantEvaporator {
         double newContent = content;
         for (i = 1; ; i++) {
             newContent = newContent * ((100 - evap_per_day) / 100);
-            if (content / newContent >= threshold) {
+            if ((newContent / content) * 100 <= threshold) {
                 break;
             }
         }
@@ -21,6 +21,6 @@ public class DeodorantEvaporator {
     }
 
     public static void main(String[] args) {
-        System.out.println(evaporator(0, 10, 10));
+        System.out.println(evaporator(10, 10, 10));
     }
 }

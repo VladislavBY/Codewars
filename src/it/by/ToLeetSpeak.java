@@ -4,8 +4,8 @@ public class ToLeetSpeak {
     static String toLeetSpeak(final String speak) {
         byte[] str = speak.getBytes();
         StringBuilder outPut = new StringBuilder();
-        for (int i = 0; i < str.length; i++) {
-            switch (str[i]) {
+        for (byte b : str) {
+            switch (b) {
 
                 case 65:
                     outPut.append('@');

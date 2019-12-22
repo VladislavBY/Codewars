@@ -6,27 +6,29 @@ package it.by;
 //        "This is an example!" ==> "sihT si na !elpmaxe"
 //        "double  spaces"      ==> "elbuod  secaps"
 
-import java.util.Arrays;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class ReverseWords {
     public static String reverseWords(final String original) {
-        char[] ch = original.toCharArray();
-        String output = "";
-        for (int i = 0; i < ch.length / 2; i++) {
-            char hash = ch[i];
-            ch[i] = ch [ch.length - 1 - i];
-            ch [ch.length - 1 - i] = hash;
-
+        StringBuilder text = new StringBuilder();
+        Pattern p = Pattern.compile(" ");
+        String[] words = p.split(original);
+        for (String word : words) {
+            StringBuilder rev = new StringBuilder(word);
+            rev.reverse();
+            text.append(rev);
         }
-        for (char c : ch) {
-            output += c;
+        Matcher m = p.matcher(original);
+        while (m.find()) {
+            text.insert(m.start(), " ");
         }
-        return output;
+        return text.toString();
     }
 
     public static void main(String[] args) {
-        System.out.println((reverseWords("double  spaces")) );
+        System.out.println(reverseWords("double  spaced  words"));
     }
 }
-//Переворачивается всё, а нужно перевернуть каждое слово в отдельности
-//Now is reversing everything, but need reverse every words separately
+
+

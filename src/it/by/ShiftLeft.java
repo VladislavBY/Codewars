@@ -15,10 +15,11 @@ public class ShiftLeft {
             }
             i++;
         }
+        System.out.println("a: " + sbA + " b: " + sbB);
         return i;
     }
 
     public static void main(String[] args) {
-        System.out.println(shiftLeft("test", "yes"));
+        System.out.println(shiftLeft("pony", "ny"));
     }
 }

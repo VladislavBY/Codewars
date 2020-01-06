@@ -17,7 +17,7 @@ public class WhoLikesIt {
             outPut.append(names[0]).append(" likes this");
         } else if (names.length == 2) {
             outPut.append(names[0]).append(" and ").append(names[1]).append(" like this");
-        } else if (names.length == 3) {
+        } else {
             outPut.append(names[0]).append(", ").append(names[1]).append(" and ").append(names[2]).append(" like this");
         }
         return outPut.toString();

@@ -1,0 +1,15 @@
+package it.by;
+
+import java.util.Arrays;
+
+public class SortTheGiftCode {
+    public String sortGiftCode(String code){
+        StringBuilder outPut = new StringBuilder();
+        String [] letters = code.split("");
+        Arrays.sort(letters);
+        for (String letter : letters) {
+            outPut.append(letter);
+        }
+        return outPut.toString();
+    }
+}

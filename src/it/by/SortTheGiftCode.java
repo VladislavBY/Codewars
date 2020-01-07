@@ -12,4 +12,9 @@ public class SortTheGiftCode {
         }
         return outPut.toString();
     }
+
+    public static void main(String[] args) {
+        SortTheGiftCode a = new SortTheGiftCode();
+        System.out.println(a.sortGiftCode("zyxwvutsrqponmlkjihgfedcba"));
+    }
 }

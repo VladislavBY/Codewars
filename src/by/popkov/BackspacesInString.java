@@ -3,7 +3,6 @@ package by.popkov;
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class BackspacesInString {
     public String cleanString(String s) {

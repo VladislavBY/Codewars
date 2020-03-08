@@ -16,12 +16,13 @@ public class CountingDuplicates {
      * @param text String text for count duplicate
      * @return the count of distinct case-insensitive alphabetic characters and numeric digits
      */
+
     public static int duplicateCount(String text) {
-        Set<Character> allAppears = new HashSet<>();
+        Set<Character> all = new HashSet<>();
         Set<Character> duplicates = new HashSet<>();
 
         for (char ch : text.toLowerCase().toCharArray()) {
-            if (!allAppears.contains(ch)) allAppears.add(ch);
+            if (!all.contains(ch)) all.add(ch);
             else duplicates.add(ch);
         }
         return duplicates.size();

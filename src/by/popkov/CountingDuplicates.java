@@ -21,8 +21,8 @@ public class CountingDuplicates {
         Set<Character> duplicates = new HashSet<>();
 
         for (char ch : text.toLowerCase().toCharArray()) {
-            if (allAppears.contains(ch)) duplicates.add(ch);
-            else allAppears.add(ch);
+            if (!allAppears.contains(ch)) allAppears.add(ch);
+            else duplicates.add(ch);
         }
         return duplicates.size();
     }

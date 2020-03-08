@@ -13,7 +13,7 @@ public class CountingDuplicates {
      * "aA11" -> 2 # 'a' and '1'
      * "ABBA" -> 2 # 'A' and 'B' each occur twice
      *
-     * @param text
+     * @param text String text for count duplicate 
      * @return the count of distinct case-insensitive alphabetic characters and numeric digits
      */
     public static int duplicateCount(String text) {

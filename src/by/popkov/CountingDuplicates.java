@@ -17,11 +17,10 @@ public class CountingDuplicates {
      * @return the count of distinct case-insensitive alphabetic characters and numeric digits
      */
     public static int duplicateCount(String text) {
-        String lowerCaseText = text.toLowerCase();
         Set<Character> allAppears = new HashSet<>();
         Set<Character> duplicates = new HashSet<>();
 
-        for (char ch : lowerCaseText.toCharArray()) {
+        for (char ch : text.toLowerCase().toCharArray()) {
             if (allAppears.contains(ch) && !duplicates.contains(ch)) duplicates.add(ch);
             else allAppears.add(ch);
         }

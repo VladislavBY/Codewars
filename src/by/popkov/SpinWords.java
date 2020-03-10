@@ -27,4 +27,8 @@ public class SpinWords {
         }
         return sb.toString().trim();
     }
+
+    public static void main(String[] args) {
+        System.out.println(new SpinWords().spinWords("Welcome to home"));
+    }
 }

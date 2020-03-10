@@ -7,7 +7,7 @@ public class SpinWordsStream {
     public String spinWords(String sentence) {
         return Arrays.stream(sentence.split(" "))
                 .map(o -> o.length() > 4 ? new StringBuilder(o).reverse().toString() : o)
-                .collect(Collectors.joining());
+                .collect(Collectors.joining(" "));
     }
 
     public static void main(String[] args) {

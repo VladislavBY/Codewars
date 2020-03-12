@@ -28,9 +28,9 @@ public class Twisted {
         return Arrays.stream(array)
                 .map(String::valueOf)
                 .sorted(Comparator.comparing(o -> Integer.parseInt(o
-                        .replaceAll("3", "three")
-                        .replaceAll("7", "3")
-                        .replaceAll("three", "7")
+                        .replace('3', '*')
+                        .replace('7', '3')
+                        .replace('*', '7')
                 )))
                 .map(Integer::valueOf)
                 .toArray(Integer[]::new);

@@ -37,6 +37,6 @@ public class Twisted {
     }
 
     public static void main(String[] args) {
-        System.out.println(Arrays.toString(sortTwisted37(new Integer[]{9, 2, 4, 7, 3})));
+        System.out.println(Arrays.toString(sortTwisted37(new Integer[]{1,2,3,4,5,6,7,8,9})));
     }
 }

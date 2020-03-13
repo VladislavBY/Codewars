@@ -2,7 +2,6 @@ package by.popkov;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Comparator;
 
 public class SortableShapes {
     double side = 1.1234;
@@ -16,9 +15,9 @@ public class SortableShapes {
         shapes.add(new Rectangle(2, 3));
         shapes.add(new Triangle(base, height));
         shapes.add(new Circle(radius));
-        shapes.add(new CustomShape(100));
+        shapes.add(new CustomShape(1));
 
-        Collections.sort(shapes, Comparator.comparing(Shape::getArea));
+        Collections.sort(shapes);
         return shapes;
     }
 
@@ -27,84 +26,45 @@ public class SortableShapes {
     }
 }
 
-interface Shape {
-    public double getArea();
+abstract class Shape implements Comparable<Shape> {
+    protected double area;
+
+    @Override
+    public int compareTo(Shape o) {
+        double div = this.area - o.area;
+        if (div > 0) return 1;
+        else if (div < 0) return -1;
+        else return 0;
+    }
 }
 
 
-class Square implements Shape {
-    private double side;
-    private double area;
-
+class Square extends Shape {
     public Square(double side) {
-        this.side = side;
         this.area = Math.pow(side, 2);
     }
-
-    @Override
-    public double getArea() {
-        return area;
-    }
 }
 
-class Rectangle implements Shape {
-    private double width;
-    private double height;
-    private double area;
-
+class Rectangle extends Shape {
     public Rectangle(double width, double height) {
-        this.width = width;
-        this.height = height;
         this.area = width * height;
     }
-
-    @Override
-    public double getArea() {
-        return area;
-    }
 }
 
-class Triangle implements Shape {
-    private double base;
-    private double height;
-    private double area;
-
+class Triangle extends Shape {
     public Triangle(double base, double height) {
-        this.base = base;
-        this.height = height;
         this.area = base * height / 2;
     }
-
-    @Override
-    public double getArea() {
-        return area;
-    }
 }
 
-class Circle implements Shape {
-    private double radius;
-    private double area;
-
+class Circle extends Shape {
     public Circle(double radius) {
-        this.radius = radius;
         this.area = Math.pow(radius, 2) * Math.PI;
     }
-
-    @Override
-    public double getArea() {
-        return area;
-    }
 }
 
-class CustomShape implements Shape {
-    private double area;
-
+class CustomShape extends Shape {
     public CustomShape(double area) {
         this.area = area;
-    }
-
-    @Override
-    public double getArea() {
-        return area;
     }
 }

@@ -31,9 +31,9 @@ abstract class Shape implements Comparable<Shape> {
 
     @Override
     public int compareTo(Shape o) {
-        double div = this.area - o.area;
-        if (div > 0) return 1;
-        else if (div < 0) return -1;
+        double deference = this.area - o.area;
+        if (deference > 0) return 1;
+        else if (deference < 0) return -1;
         else return 0;
     }
 }

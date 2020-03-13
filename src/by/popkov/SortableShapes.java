@@ -10,12 +10,12 @@ public class SortableShapes {
     double base = 5;
     double height = 2;
 
-    public static ArrayList<Shape> sortShape() {
+    public ArrayList<Shape> sortShape() {
         ArrayList<Shape> shapes = new ArrayList<>();
-        shapes.add(new Square(2));
+        shapes.add(new Square(side));
         shapes.add(new Rectangle(2, 3));
-        shapes.add(new Triangle(8, 10));
-        shapes.add(new Circle(10));
+        shapes.add(new Triangle(base, height));
+        shapes.add(new Circle(radius));
         shapes.add(new CustomShape(100));
 
         Collections.sort(shapes, Comparator.comparing(Shape::getArea));
@@ -23,7 +23,7 @@ public class SortableShapes {
     }
 
     public static void main(String[] args) {
-        System.out.println(sortShape());
+        System.out.println(new SortableShapes().sortShape());
     }
 }
 

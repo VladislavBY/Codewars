@@ -26,6 +26,13 @@ public class SortableShapes {
     }
 }
 
+/**
+ * Although shapes can be very different by nature, they can be sorted by the size of their area.
+ *
+ * Task:
+ * Create different shapes that can be part of a sortable list.
+ * The sort order is based on the size of their respective areas
+ */
 abstract class Shape implements Comparable<Shape> {
     protected double area;
 

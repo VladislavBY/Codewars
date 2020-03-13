@@ -5,7 +5,7 @@ import java.util.Comparator;
 import java.util.stream.Collectors;
 
 
-public class YourOrderSteam {
+public class YourOrderStream {
 
     /**
      * Your task is to sort a given string. Each word in the string will contain a single number.

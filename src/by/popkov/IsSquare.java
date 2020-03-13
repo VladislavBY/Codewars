@@ -1,6 +1,6 @@
 package by.popkov;
 
-public class Square {
+public class IsSquare {
     public static boolean isSquare(int n) {
         return Math.sqrt(n) % 1 == 0;
     }

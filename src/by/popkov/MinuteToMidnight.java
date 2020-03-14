@@ -7,6 +7,23 @@ import java.util.Date;
 import java.util.GregorianCalendar;
 
 public class MinuteToMidnight {
+    /**
+     * will take a date object as parameter. Return the number of minutes in the following format:
+     *
+     * "x minute(s)"
+     *
+     * You will always get a date object with of today with a random timestamp.
+     * You have to round the number of minutes.
+     * Milliseconds doesn't matter!
+     *
+     * Some examples:
+     *
+     * 10.00 am => "840 minutes"
+     * 23.59 pm => "1 minute"
+     *
+     * @param d the date object
+     * @return the number of minutes fo midnight
+     */
     public String countMinutes(Date d) {
         LocalDateTime localDateTime = LocalDateTime.ofInstant(d.toInstant(), ZoneId.systemDefault());
         int minutesToMidnight = 1440 - (localDateTime.getHour() * 60 + localDateTime.getMinute()

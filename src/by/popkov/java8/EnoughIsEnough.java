@@ -22,8 +22,7 @@ public class EnoughIsEnough {
     public static int[] deleteNth(int[] elements, int maxOccurrences) {
         Map<Integer, Integer> map = new HashMap<>(elements.length);
         int[] clearedElements = new int[0];
-        for (int i = 0; i < elements.length; i++) {
-            int element = elements[i];
+        for (int element : elements) {
             if (map.containsKey(element)) map.put(element, map.get(element) + 1);
             else map.put(element, 1);
             if (map.get(element) <= maxOccurrences) {

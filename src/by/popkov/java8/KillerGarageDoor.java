@@ -1,12 +1,12 @@
 package by.popkov.java8;
 
 public class KillerGarageDoor {
-    static int doorPos = 0;
-    static int moveSpeed = 0;
+    public static int doorPos = 0;
+    public static int moveSpeed = 0;
 
-    static final char PUSH_BUTTON = 'P';
-    static final char OBSTACLE_DETECTED = 'O';
-    static final char NO_EVENT = '.';
+    public static final char PUSH_BUTTON = 'P';
+    public static final char OBSTACLE_DETECTED = 'O';
+    public static final char NO_EVENT = '.';
 
 
     public static String run(String events) {
@@ -39,6 +39,6 @@ public class KillerGarageDoor {
     }
 
     public static void main(String[] args) {
-        System.out.println(run("P...."));
+        System.out.println(run("P.O...."));
     }
 }

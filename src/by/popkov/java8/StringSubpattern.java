@@ -1,4 +1,4 @@
-package by.popkov;
+package by.popkov.java8;
 
 public class StringSubpattern {
     public static boolean hasSubpattern(String str) {

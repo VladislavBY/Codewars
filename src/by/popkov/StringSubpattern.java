@@ -5,7 +5,7 @@ public class StringSubpattern {
         int sttLength = str.length();
         if (sttLength == 0) return false;
         for (int lengthOfSubpattern = 1; lengthOfSubpattern <= sttLength / 2; lengthOfSubpattern++) {
-            if (str.replace(str.substring(0, lengthOfSubpattern), "").length() == 0) return true;
+            if (str.matches("(" + str.substring(0, lengthOfSubpattern) + ")" + "{2,}")) return true;
         }
         return false;
     }

@@ -1,25 +1,24 @@
 package by.popkov.java8;
 
+import java.util.Arrays;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 public class DuplicateEncoder {
     static String encode(String word) {
-        Set<String> characters = new HashSet<>();
-        String[] split = word.split("");
+        final HashMap<String, Integer> chEncounter = new HashMap<>();
+        String[] split = word.toLowerCase().split("");
 
-        for (int i = 0; i < split.length; i++) {
-            if (characters.contains(split[i])) split[i] = ")";
-            else {
-                characters.add(split[i]);
-                split[i] = "(";
-            }
+        for (String s : split) {
+            if (chEncounter.containsKey(s)) chEncounter.put(s, chEncounter.get(s) + 1);
+            else chEncounter.put(s, 1);
         }
-
-        return String.join("", split);
+        return  Arrays.stream(split).map(s -> (chEncounter.get(s) < 2) ? "(" : ")").collect(Collectors.joining());
     }
 
     public static void main(String[] args) {
-        System.out.println(encode("din"));
+        System.out.println(encode("Success"));
     }
 }

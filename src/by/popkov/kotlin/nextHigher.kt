@@ -6,7 +6,7 @@ fun nextHigher(n: Int): Int {
     while (true) {
         num += 1
         if (count == num.toString(2).count { o: Char -> o == '1' }) {
-            return num;
+            return num
         }
     }
 }
